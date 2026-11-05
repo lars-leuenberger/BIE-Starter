@@ -1,0 +1,7 @@
+<Solution>
+    <Project Path="src/BIE.Core/BIE.Core.csproj" />
+    <Project Path="src/BIE.Web/BIE.Web.csproj" />
+    <Project Path="tests/BIE.UnitTests/BIE.UnitTests.csproj" />
+    <Project Path="tests/BIE.IntegrationTests/BIE.IntegrationTests.csproj" />
+    <Project Path="tests/BIE.E2ETests/BIE.E2ETests.csproj" />
+</Solution>

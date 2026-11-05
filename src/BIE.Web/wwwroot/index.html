@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="de-CH">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>BIE · Einreisekontrolle</title>
+    <link rel="stylesheet" href="style.css?v=20261103-9" />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="brand">
+        BIE
+        <span>
+          BÜRO FÜR
+          <br />
+          INTERPLANETARE EINREISE
+        </span>
+      </a>
+      <span class="classified">VERTRAULICH · SEKTOR ERDE</span>
+      <span class="agent">● AGENT RUSSO / 007</span>
+    </header>
+    <main>
+      <div class="mast">
+        <div>
+          <p class="eyebrow">AUSSENSTELLE ST. GALLEN / SCHALTER 03</p>
+          <h1>
+            Willkommen auf der Erde.
+            <em>Fast.</em>
+          </h1>
+          <p>Wir prüfen die Papiere. Sie behalten das Universum im Auge.</p>
+        </div>
+        <div class="seal">
+          BIE
+          <br />
+          <small>
+            EARTH DIVISION
+            <br />
+            EST. 1961
+          </small>
+        </div>
+      </div>
+      <div class="workspace">
+        <aside>
+          <div class="sectionbar">
+            01 / PERSONENAKTE
+            <span>LIVE</span>
+          </div>
+          <div class="portrait">
+            <img id="sample-portrait" src="assets/zorg.png" alt="Porträt von Zorg Blubber III" />
+            <div class="scanline"></div>
+            <span class="photo-label" id="sample-photo-label">
+              BIOMETRISCHE ERFASSUNG / AKTE 01
+            </span>
+          </div>
+          <div class="dossier">
+            <nav class="sample-navigation" aria-label="Musterakten durchblättern">
+              <button
+                id="sample-prev"
+                type="button"
+                aria-label="Vorherige Musterakte"
+                aria-controls="sample-cards"
+              >
+                ← Zurück
+              </button>
+              <span id="sample-position" role="status" aria-live="polite" aria-atomic="true">
+                1 / 6
+              </span>
+              <button
+                id="sample-next"
+                type="button"
+                aria-label="Nächste Musterakte"
+                aria-controls="sample-cards"
+              >
+                Weiter →
+              </button>
+            </nav>
+            <div id="sample-cards"></div>
+          </div>
+          <div class="notice">
+            <b>DIENSTANWEISUNG 04</b>
+            <p>Unbekannte Lebensformen nicht füttern. Auch dann nicht, wenn sie höflich fragen.</p>
+          </div>
+        </aside>
+        <section class="intake">
+          <div class="sectionbar">
+            02 / EINREISEPRÜFUNG
+            <span>FORMULAR E-01</span>
+          </div>
+          <form id="application-form">
+            <h2>Papiere, bitte.</h2>
+            <p class="muted">Alle Angaben beziehen sich auf Ihre aktuelle Existenzform.</p>
+            <label>
+              Vollständiger Name
+              <input
+                id="name"
+                name="name"
+                maxlength="60"
+                required
+                placeholder="Name gemäss galaktischem Pass"
+              />
+            </label>
+            <div class="cols">
+              <label>
+                Heimatplanet
+                <select id="planet">
+                  <option>Schleimora</option>
+                  <option>Orion</option>
+                  <option>Kepler-186f</option>
+                </select>
+              </label>
+              <label>
+                Besuchszweck
+                <select id="purpose">
+                  <option>Tourismus</option>
+                  <option>Diplomatie</option>
+                  <option>Arbeit</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              Aufenthalt in Erdentagen
+              <input id="days" type="number" min="1" max="365" value="5" required />
+              <small>Touristische Aufenthalte: maximal 30 Tage.</small>
+            </label>
+            <fieldset>
+              <legend>Sicherheitsdeklaration</legend>
+              <label class="check">
+                <input id="blackHole" type="checkbox" />
+                <span>
+                  Ich führe ein schwarzes Loch mit.
+                  <small>Auch in Reisegrösse deklarationspflichtig.</small>
+                </span>
+              </label>
+              <label class="check">
+                <input id="fungus" type="checkbox" />
+                <span>Ich habe ansteckenden Weltraumpilz.</span>
+              </label>
+              <label class="check">
+                <input id="shapeshifter" type="checkbox" />
+                <span>Ich bin Formwandler.</span>
+              </label>
+              <label class="check">
+                <input id="validIdentity" type="checkbox" checked />
+                <span>Mein Identitätsnachweis ist gültig.</span>
+              </label>
+            </fieldset>
+            <button id="submit" type="submit">
+              EINREISE PRÜFEN
+              <span>→</span>
+            </button>
+            <div id="result" role="status" aria-live="polite" hidden></div>
+          </form>
+        </section>
+      </div>
+      <section class="register">
+        <div class="sectionbar">
+          03 / FALLREGISTER
+          <button id="refresh" type="button">AKTUALISIEREN ↻</button>
+        </div>
+        <div class="register-heading">
+          <h2>Die Erde führt Buch.</h2>
+          <label class="searchlabel">
+            Akten durchsuchen
+            <input id="search" type="search" placeholder="Name oder Heimatplanet" />
+          </label>
+        </div>
+        <p id="register-error" role="alert"></p>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th>AKTE</th>
+                <th>ANTRAGSTELLER</th>
+                <th>HERKUNFT</th>
+                <th>AUFENTHALT</th>
+                <th>ENTSCHEID</th>
+              </tr>
+            </thead>
+            <tbody id="application-list"></tbody>
+          </table>
+        </div>
+        <p id="empty">Keine Einreisen registriert. Noch ist die Erde unter sich.</p>
+      </section>
+      <footer>
+        BIE / EARTH DIVISION
+        <span>WENN SIE DAS LESEN KÖNNEN, SIND SIE NOCH NICHT GEBLITZDINGST WORDEN.</span>
+        <span>INTERN · E-01</span>
+      </footer>
+    </main>
+    <script src="app.js?v=20261103-9"></script>
+  </body>
+</html>
